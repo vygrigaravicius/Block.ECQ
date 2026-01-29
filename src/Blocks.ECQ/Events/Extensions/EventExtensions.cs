@@ -4,6 +4,6 @@
     {
         public static IEventEnvelope Wrap(
             this IEvent payload, IEventContext context)
-                => EventEnvelopeHelper.Build(payload, context);
+                => EventEnvelopeBuilder.Build(payload, context);
     }
 }

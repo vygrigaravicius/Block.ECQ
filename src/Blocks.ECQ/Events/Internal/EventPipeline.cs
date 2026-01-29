@@ -1,6 +1,5 @@
 ﻿namespace Blocks.ECQ.Events
 {
-    // TODO: Format the exception(s) to provide more information.
     internal sealed class EventPipeline<TEvent>() :
         IEventPipeline
             where TEvent : IEvent
@@ -12,7 +11,10 @@
             if (@event is IEventEnvelope<TEvent> typed)
                 await assembler.Assemble(typed, cancellationToken)
                     .Invoke();
-            else throw new InvalidCastException();
+            else throw new InvalidCastException($"Cannot cast event of type " +
+                $"'{@event.GetType().FullName}' to expected type " +
+                $"'{typeof(IEventEnvelope<TEvent>).FullName}' in " +
+                $"'{nameof(EventPipeline<>)}' Handle method.");
         }
     }
 
