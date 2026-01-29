@@ -4,7 +4,8 @@
         IEventHandler
             where TEvent: IEvent
     {
-
+        Task Handle(IEventEnvelope<TEvent> @event, 
+            CancellationToken cancellationToken);
     }
 
     public interface IEventHandler
