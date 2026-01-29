@@ -2,8 +2,7 @@
 
 namespace Blocks.ECQ.Events
 {
-    // TODO: Add Logging, inject Pipeline assembler.  
-    // TODO: Add Guards.
+    // TODO: Add Logging, Guards.
     public sealed class EventRouter(EventPipelineAssembler Assembler)
     {
         private static readonly ConcurrentDictionary<Type, 

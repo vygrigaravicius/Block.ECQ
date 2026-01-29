@@ -1,18 +1,18 @@
 ﻿namespace Blocks.ECQ.Events
 {
     // TODO: Add Timestam(s) & Guards once the other libraries are in place. 
-    public sealed record EventEnvelope<TPayload>:
-        IEventEnvelope<TPayload>
-            where TPayload: IEvent
+    public sealed record EventEnvelope<TEvent>:
+        IEventEnvelope<TEvent>
+            where TEvent: IEvent
     {
         public required EventId Id { get; init; }
 
         public required IEventContext Context { get; init; }
 
-        public required TPayload Payload { get; init; }
+        public required TEvent Payload { get; init; }
 
-        internal static EventEnvelope<TPayload> Wrap(
-            TPayload payload, IEventContext context)
+        internal static EventEnvelope<TEvent> Wrap(
+            TEvent payload, IEventContext context)
                 => new()
                 {
                     Id = new EventId(),
@@ -21,11 +21,11 @@
                 };
     }
 
-    public interface IEventEnvelope<out TPayload>:
+    public interface IEventEnvelope<out TEvent>:
         IEventEnvelope
-            where TPayload: IEvent
+            where TEvent: IEvent
     {
-        new TPayload Payload { get; }
+        new TEvent Payload { get; }
 
         IEvent IEventEnvelope.Payload 
             => Payload;
