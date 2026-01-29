@@ -12,7 +12,8 @@ namespace Blocks.ECQ.Events
         public static IEventEnvelope Build(IEvent payload, IEventContext contrext)
             => _lambdas.GetOrAdd(payload.GetType(), AssembleLambda).Invoke(payload, contrext);
 
-        private static Func<IEvent, IEventContext, IEventEnvelope> AssembleLambda(Type typeOfPayload)
+        private static Func<IEvent, IEventContext, IEventEnvelope> AssembleLambda(
+            Type typeOfPayload)
         {
             MethodInfo? wrapMethod = typeof(EventEnvelope<>)
                 .MakeGenericType(typeOfPayload)
