@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Blocks.ECQ.Events
 {
-    internal static class EventEnvelopeHelper
+    internal static class EventEnvelopeBuilder
     {
         private static readonly ConcurrentDictionary<Type,
             Func<IEvent, IEventContext, IEventEnvelope>> _lambdas = [];
