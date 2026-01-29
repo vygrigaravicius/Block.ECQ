@@ -4,7 +4,8 @@
         ICommandValidator
             where TCommand: ICommand
     {
-
+        Task<bool> Validate(TCommand command, 
+            CancellationToken cancellationToken);
     }
 
     public interface ICommandValidator

@@ -1,6 +1,6 @@
 ﻿namespace Blocks.ECQ.Queries
 {
-    public interface IQuery<out TResult>:
+    public interface IQuery<out TResponse>:
         IQuery
     {
 

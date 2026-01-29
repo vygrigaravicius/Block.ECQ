@@ -1,4 +1,4 @@
-﻿namespace Blocks.ECQ.Events.Options
+﻿namespace Blocks.ECQ.Events
 {
     public class EventOptions
     {

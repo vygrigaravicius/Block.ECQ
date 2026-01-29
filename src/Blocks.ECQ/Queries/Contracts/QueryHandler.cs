@@ -1,8 +1,8 @@
 ﻿namespace Blocks.ECQ.Queries
 {
-    public interface IQueryHandler<in TQuery, TResult>:
+    public interface IQueryHandler<in TQuery, TResponse>:
         IQueryHandler
-            where TQuery: IQuery<TResult>
+            where TQuery: IQuery<TResponse>
     {
 
     }
