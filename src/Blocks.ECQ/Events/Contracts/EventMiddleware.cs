@@ -4,6 +4,6 @@
         where TEvent: IEvent
     {
         Task Invoke(object @event, object next, 
-            CancellationToken cancellationToken = default);
+            CancellationToken cancellationToken);
     }
 }
