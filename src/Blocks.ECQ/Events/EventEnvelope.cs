@@ -2,7 +2,7 @@
 {
     // TODO: Add Timestam(s) & Guards once the other libraries are in place. 
     public sealed record EventEnvelope<TPayload>:
-        IEventEnvelope
+        IEventEnvelope<TPayload>
             where TPayload: IEvent
     {
         public required EventId Id { get; init; }
@@ -10,8 +10,6 @@
         public required IEventContext Context { get; init; }
 
         public required TPayload Payload { get; init; }
-
-        IEvent IEventEnvelope.Payload => Payload;
 
         internal static EventEnvelope<TPayload> Wrap(
             TPayload payload, IEventContext context)
@@ -21,6 +19,16 @@
                     Context = context,
                     Payload = payload,
                 };
+    }
+
+    public interface IEventEnvelope<out TPayload>:
+        IEventEnvelope
+            where TPayload: IEvent
+    {
+        new TPayload Payload { get; }
+
+        IEvent IEventEnvelope.Payload 
+            => Payload;
     }
 
     public interface IEventEnvelope

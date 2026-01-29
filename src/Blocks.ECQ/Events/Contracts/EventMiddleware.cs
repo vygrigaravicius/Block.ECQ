@@ -3,7 +3,7 @@
     public interface IEventMiddleware<in TEvent>
         where TEvent: IEvent
     {
-        Task Invoke(object @event, object next, 
+        Task Invoke(IEventEnvelope<TEvent> @event, object next, 
             CancellationToken cancellationToken);
     }
 }
