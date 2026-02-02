@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Events\Setup\" />
+    <Folder Include="Queries\Internal\" />
   </ItemGroup>
 
 </Project>

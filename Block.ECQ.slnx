@@ -1,8 +1,13 @@
 <Solution>
+  <Folder Name="/samples/">
+    <Project Path="../../../../../../../../2026/OS/Block.ECQ/samples/Blocks.ECQ.Samples/Blocks.ECQ.Samples.csproj" />
+  </Folder>
   <Folder Name="/src/">
-    <Project Path="src/Blocks.ECQ/Blocks.ECQ.csproj" />
+    <Project Path="../../../../../../../../2026/OS/Block.ECQ/src/Blocks.ECQ.Benchmarks/Blocks.ECQ.Benchmarks.csproj" />
+    <Project Path="../../../../../../../../2026/OS/Block.ECQ/src/Blocks.ECQ.Persistance/Blocks.ECQ.Persistance.csproj" />
+    <Project Path="../../../../../../../../2026/OS/Block.ECQ/src/Blocks.ECQ/Blocks.ECQ.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Block.ECQ.Tests/Block.ECQ.Tests.csproj" />
+    <Project Path="../../../../../../../../2026/OS/Block.ECQ/tests/Block.ECQ.Tests/Block.ECQ.Tests.csproj" />
   </Folder>
 </Solution>
